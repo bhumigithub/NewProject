@@ -32,6 +32,7 @@ public class StudentLogin extends ConnectionJDBC {
 						break;
 					}else {
 						System.out.println("Enter correct username and password ");
+						break;
 					}
 			}		
 		} catch (Exception e) {

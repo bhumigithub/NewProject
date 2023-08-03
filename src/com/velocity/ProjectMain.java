@@ -28,7 +28,8 @@ public class ProjectMain {
 				log.login();
 				break;
 			case 3:
-				
+				DisplayQuestion dis = new DisplayQuestion();
+				dis.display();
 				break;
 			case 4:
 				
