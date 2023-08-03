@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 public class ProjectMain {
 	
+	Scanner scr = new Scanner(System.in);
+	
 	public void userOpration() {
 			int num=0;
 		do {
@@ -14,7 +16,6 @@ public class ProjectMain {
 			System.out.println("5. Display Quiz result");
 			System.out.println("6. Exit ");
 			System.out.println("\n Enter your choice >>");
-			Scanner scr = new Scanner(System.in);
 			num= scr.nextInt();
 			
 			switch(num) {
@@ -44,33 +45,49 @@ public class ProjectMain {
 	}
 	
 	public void adminOperation() {
+		
+		String Id="Admin";
+		String password ="Admin@123";
+		
+		System.out.println("Enter ID :");
+		String adminId = scr.next();
+		System.out.println("Enter password :");
+		String adminPassword = scr.next();
+		
+		
 		int num = 0;
-		do {
-			System.out.println("1. Display all students score as per ascending order");
-			System.out.println("2. Fetch student score by using id");
-			System.out.println("3. Add question with 4 options into database");
-			System.out.println("4. Exit ");
-			System.out.println("\n Enter your choice >>");
-			Scanner scr = new Scanner(System.in);
-			num = scr.nextInt();
+		
+		if((Id.equals(adminId)) && (password.equals(adminPassword))) {
+			do {
+				System.out.println("1. Display all students score as per ascending order");
+				System.out.println("2. Fetch student score by using id");
+				System.out.println("3. Add question with 4 options into database");
+				System.out.println("4. Exit ");
+				System.out.println("\n Enter your choice >>");
+				num = scr.nextInt();
+				
+				switch(num) {
+				case 1:
+					
+					break;
+				case 2:
+					
+					break;
+				case 3:
+					InsertQuestionData que = new InsertQuestionData();
+					que.insertQuestions();
+					break;
+				case 4:
+					break;
+				default:
+					System.out.println(" Enter the correct number \n");
+				}
+			}while(num!=4);
 			
-			switch(num) {
-			case 1:
-				
-				break;
-			case 2:
-				
-				break;
-			case 3:
-				InsertQuestionData que = new InsertQuestionData();
-				que.insertQuestions();
-				break;
-			case 4:
-				break;
-			default:
-				System.out.println(" Enter the correct number \n");
-			}
-		}while(num!=4);
+		}else {
+			System.out.println("Enter correct ID and Password !!");
+		}
+		
 	}
 	
 	public static void main(String[] args) {
