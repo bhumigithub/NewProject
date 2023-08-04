@@ -5,16 +5,14 @@ import java.util.Scanner;
 public class ProjectMain {
 	
 	Scanner scr = new Scanner(System.in);
-	
 	public void userOpration() {
 			int num=0;
 		do {
 			System.out.println("1. Student Registration ");
 			System.out.println("2. Student login ");
 			System.out.println("3. Display the list of quections");
-			System.out.println("4. Store Quiz result into database");
-			System.out.println("5. Display Quiz result");
-			System.out.println("6. Exit ");
+			System.out.println("4. Display Quiz result");
+			System.out.println("5. Exit ");
 			System.out.println("\n Enter your choice >>");
 			num= scr.nextInt();
 			
@@ -28,21 +26,16 @@ public class ProjectMain {
 				log.login();
 				break;
 			case 3:
+				System.out.println("========Welcome To Java Programming Quiz based application=========");
 				DisplayQuestion dis = new DisplayQuestion();
 				dis.display();
 				break;
 			case 4:
-				
-				break;
-			case 5:
-				
-				break;
-			case 6:
 				break;
 			default:
 				System.out.println(" Enter the correct number !!\n");
 			}
-		}while(num!=6);
+		}while(num!=4);
 	}
 	
 	public void adminOperation() {
