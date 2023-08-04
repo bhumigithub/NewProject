@@ -27,14 +27,12 @@ public class StudentLogin extends ConnectionJDBC {
 			
 			
 			while(rs.next()) {
+				
 				if(rs.getString(4).equals(username) && (rs.getString(5).equals(password))) {
 						System.out.println("Login Successfully !!\n");
 						break;
-					}else {
-						System.out.println("Enter correct username and password ");
-						break;
 					}
-			}		
+			}	
 		} catch (Exception e) {
 			
 			e.printStackTrace();
