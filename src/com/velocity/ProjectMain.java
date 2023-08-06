@@ -5,14 +5,15 @@ import java.util.Scanner;
 public class ProjectMain {
 	
 	Scanner scr = new Scanner(System.in);
+	
+	//Student oprations
 	public void userOpration() {
 			int num=0;
 		do {
 			System.out.println("1. Student Registration ");
 			System.out.println("2. Student login ");
 			System.out.println("3. Display the list of quections");
-			System.out.println("4. Display Quiz result");
-			System.out.println("5. Exit ");
+			System.out.println("4. Exit ");
 			System.out.println("\n Enter your choice >>");
 			num= scr.nextInt();
 			
@@ -30,14 +31,14 @@ public class ProjectMain {
 				DisplayQuestion dis = new DisplayQuestion();
 				dis.display();
 				break;
-			case 4:
-				break;
+			case 4: break;
 			default:
 				System.out.println(" Enter the correct number !!\n");
 			}
 		}while(num!=4);
 	}
 	
+	//Admin oprations
 	public void adminOperation() {
 		
 		String Id="Admin";
@@ -62,10 +63,12 @@ public class ProjectMain {
 				
 				switch(num) {
 				case 1:
-					
+					StudentScore sc = new StudentScore();
+					sc.score();
 					break;
 				case 2:
-					
+					StudentScoreById by = new StudentScoreById();
+					by.scoreById();
 					break;
 				case 3:
 					InsertQuestionData que = new InsertQuestionData();

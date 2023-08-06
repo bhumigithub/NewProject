@@ -16,12 +16,11 @@ public class StudentLogin extends ConnectionJDBC {
 		
 		System.out.println("Enter the password");
 		String password =src.next();	
+		ProjectMain pm = new ProjectMain();
 		
 		try {
 			ConnectionJDBC connect= new ConnectionJDBC();
 		    con = connect.getconnection();
-			String sql = "select * from student ";
-			ps = con.prepareStatement(sql);
 			PreparedStatement ps= con.prepareStatement("select * from student");
 			ResultSet rs = ps.executeQuery();
 			
@@ -30,18 +29,14 @@ public class StudentLogin extends ConnectionJDBC {
 				
 				if(rs.getString(4).equals(username) && (rs.getString(5).equals(password))) {
 						System.out.println("Login Successfully !!\n");
-						break;
+						pm.userOpration();
 					}
-			}	
+			}
+			System.out.println("Invalid password Id !!!");
 		} catch (Exception e) {
 			
 			e.printStackTrace();
 			
 		}
 	}
-	public static void main(String[] args) {
-		StudentLogin log = new StudentLogin();
-		log.login();
-	}
-		
 }

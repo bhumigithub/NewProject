@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class DisplayQuestion {
 	
 	PreparedStatement prs=null;
-	PreparedStatement ps=null;
+	//PreparedStatement ps=null;
 	Connection con=null;
 	
 	
@@ -40,23 +40,6 @@ public class DisplayQuestion {
 				}
 				i++;
 			}
-			int res =count;
-			
-//			for(int i=1; i<3; i++) {
-//					rs.next();
-//					System.out.println("\nQ." +i+ " "+ rs.getString(2));
-//					System.out.println("1 "+rs.getString(3));
-//					System.out.println("2 "+rs.getString(4));
-//					System.out.println("3 "+rs.getString(5));
-//					System.out.println("4 "+rs.getString(6));
-//					
-//					System.out.println("Enter your answer :");
-//					answer = scr.next();
-//					if(rs.getString(7).equals(answer)) {
-//						count++;
-//					}
-//			}
-			
 			//System.out.println(count);
 			PreparedStatement ps = con.prepareStatement( "insert into result(count)" + "values(?)");
 			ps.setInt(1,count);
